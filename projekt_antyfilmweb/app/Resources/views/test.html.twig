@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Welcome</title>
+      
+    </head>
+    <body>
+        <div id="message">Tekst ktory sie bedzie zmianial</div>
+        <button onclick="pobierz()"> Pobierz dane </button>
+        <script
+			  src="http://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+        <script>
+            function pobierz()
+            {
+                
+                $.ajax({
+                    url: "/getdata",
+                  }).done(function(message) {
+                    $( "#message" ).text(message);
+                  });
+            }
+        </script>    
+    </body>
+    
+</html>

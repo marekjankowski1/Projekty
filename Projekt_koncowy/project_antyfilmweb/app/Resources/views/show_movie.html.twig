@@ -1,0 +1,21 @@
+<h2>{{ 'Podgląd filmu' | trans }}: {{ movie.id }}</h2>
+<table>
+	<tr><th>{{ 'Tytuł' | trans}}:</th>
+		<td>{{ movie.title }}</td>
+	</tr>
+	<tr><th>{{ 'Rok produkcji' | trans}}:</th>
+		<td>{{ movie.yearOfProduction }}</td>
+	</tr>
+        <tr><th>{{ 'Reżyser' | trans}}:</th>
+		<td>{{ movie.director }}</td>
+	</tr>
+        <tr><th>{{ 'Gatunek' | trans}}:</th>
+		<td>{{ movie.genre }}</td>
+	</tr>
+	<tr><th>{{ 'Ocena' | trans}}:</th>
+		<td>{{ movie.rating }}</td>
+	</tr>
+	<tr><th>{{ 'Opis' | trans}}:</th>
+		<td>{{ movie.description }}</td>
+	</tr>
+</table>

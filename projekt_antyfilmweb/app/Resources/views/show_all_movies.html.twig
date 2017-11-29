@@ -1,0 +1,24 @@
+<h2>{{ 'Zestawienie filmów' | trans }}</h2>
+<hr>
+<h3>Ustaw dane do filtru</h3>
+<form method="POST" action="{{ path('app_movie_showallmovies') }}">
+	Minimalne ID: <input type="text" size="5" name="over_id" value="{{ over_id }}" />
+	Minimalny ranking: <input type="text" size="5" name="over_rating" value="{{ over_rating }}" />
+	Tytuł zaczyna się od..: <input type="text" name="start_title" value="{{ start_title }}" />
+	<input type="submit" />
+</form>
+<hr>
+{% for movie in movies %}
+	<ul>
+		<li><b>ID: {{ movie.id }}</b></li>
+		<li>Tytuł: <a href="{{ path('app_movie_showmovie',
+					 {'id': movie.id}) }}">
+			{{ movie.title }}</a></li>
+		<li>Ocena: {{ movie.rating }}</li>
+		<li>Opis: {{ movie.description }}</li>
+	</ul>
+	<hr />
+{% else %}
+	{{ 'W bazie nie ma żadnych filmów' | trans }}
+{% endfor %}
+<a href="{{ path('app_movie_newmovie')}}">Dodaj nową</a>
